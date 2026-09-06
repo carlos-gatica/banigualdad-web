@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Villarreal - Asesor de Emprendimiento</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-fontawesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#E30613',
+                        brandBlue: '#004B87',
+                        brandYellow: '#FFD100',
+                        brandLightGray: '#F4F4F4',
+                        brandDarkText: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #333333;
+            background-color: #FFFFFF;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        /* Sombras suaves para estilo limpio */
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 75, 135, 0.08);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 75, 135, 0.15);
+        }
+    </style>
+</head>
+<body class="smooth-scroll flex flex-col min-h-screen bg-white">
+
+    <!-- ENCABEZADO / HEADER -->
+    <header class="bg-brandBlue text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between min-h-16 py-2">
+                
+                <!-- Identificación del Asesor -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brandYellow text-brandBlue font-bold flex items-center justify-center text-xl shadow-sm border-2 border-white">
+                        <i class="fa-solid me-0.5 fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-sm sm:text-base md:text-lg block leading-tight whitespace-nowrap">Francisco Villarreal</span>
+                        <span class="text-xs text-yellow-300 block font-light">Asesor de Emprendimiento</span>
+                    </div>
+                </div>
+
+                <!-- Menú de Navegación Escritorio -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-brandYellow transition-colors py-2">Inicio</a>
+                    <a href="#mis-grupos" class="hover:text-brandYellow transition-colors py-2">Mis Grupos</a>
+                    <a href="#nuevo-grupo" class="hover:text-brandYellow transition-colors py-2">Nuevo Grupo</a>
+                    <a href="#informacion" class="hover:text-brandYellow transition-colors py-2">Información</a>
+                    <a href="#faq" class="hover:text-brandYellow transition-colors py-2">Preguntas Frecuentes</a>
+                    <a href="#contacto" class="hover:text-brandYellow transition-colors py-2">Contacto</a>
+                </nav>
+
+                <!-- Botón WhatsApp Encabezado -->
+                <div class="hidden lg:flex items-center">
+                    <a href="https://wa.me/56989566273?text=Hola%20Francisco,%20necesito%20información%20sobre%20los%20grupos%20de%20emprendimiento" 
+                       target="_blank" 
+                       class="bg-brandRed hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2 shadow transition-transform transform active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Hablar por WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-white hover:text-brandYellow p-2 rounded-md focus:outline-none" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desplegable Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brandBlue border-t border-blue-900 px-4 pt-2 pb-4 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800">Inicio</a>
+            <a href="#mis-grupos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800">Mis Grupos</a>
+            <a href="#nuevo-grupo" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800">Nuevo Grupo</a>
+            <a href="#informacion" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800">Información</a>
+            <a href="#faq" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800">Preguntas Frecuentes</a>
+            <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800">Contacto</a>
+            <a href="https://wa.me/56989566273?text=Hola%20Francisco,%20necesito%20información%20sobre%20los%20grupos%20de%20emprendimiento" 
+               target="_blank" 
+               class="block w-full text-center bg-brandRed text-white font-bold px-4 py-3 rounded-lg shadow mt-2">
+               <i class="fa-brands fa-whatsapp me-2"></i>Hablar por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- PORTADA / HERO SECTION -->
+    <section id="inicio" class="relative bg-brandLightGray py-12 md:py-20 overflow-hidden border-b border-gray-200">
+        <!-- Detalle Gráfico Decorativo Amarillo -->
+        <div class="absolute top-0 right-0 w-24 h-24 md:w-48 md:h-48 bg-brandYellow opacity-20 rounded-bl-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                <!-- Textos Principales -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <span class="inline-block bg-white text-brandBlue border border-brandBlue/20 font-semibold px-3 py-1 rounded-full text-xs md:text-sm mb-4 shadow-sm">
+                        <i class="fa-solid fa-handshake text-brandYellow me-1.5"></i> Acompañamiento en Terreno y Comunidad
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brandBlue leading-tight mb-4">
+                        Estamos para acompañarte
+                    </h1>
+                    <p class="text-base sm:text-lg text-brandDarkText font-normal mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Información, comunicación directa y asesoría constante para fortalecer nuestros grupos y hacer crecer cada microemprendimiento.
+                    </p>
+                    
+                    <!-- Botones de Acción Principal -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/56989566273?text=Hola%20Francisco,%20quisiera%20hacer%20una%20consulta" 
+                           target="_blank"
+                           class="w-full sm:w-auto bg-brandRed hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform active:scale-95 text-center flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span class="text-lg">Hablar por WhatsApp</span>
+                        </a>
+                        <a href="#nuevo-grupo" 
+                           class="w-full sm:w-auto bg-brandBlue hover:bg-blue-900 text-white font-semibold px-6 py-4 rounded-xl shadow transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-users text-brandYellow"></i>
+                            <span>Quiero formar un grupo</span>
+                        </a>
+                    </div>
+
+                    <!-- Indicador de Atención -->
+                    <div class="mt-6 flex items-center justify-center lg:justify-start gap-2 text-xs text-gray-600">
+                        <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></span>
+                        <span>Atención disponible para responder tus consultas hoy</span>
+                    </div>
+                </div>
+
+                <!-- Imagen Destacada -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Marco Decorativo Amarillo -->
+                        <div class="absolute -inset-2 bg-brandYellow rounded-2xl transform rotate-1 opacity-70"></div>
+                        <div class="relative bg-white p-2 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Reunión de emprendedores comunitarios" 
+                                 class="w-full h-72 sm:h-80 object-cover rounded-xl"
+                                 loading="lazy" />
+                            <div class="p-4 bg-white">
+                                <p class="text-xs font-bold text-brandBlue uppercase tracking-wider">Trabajo en Equipo</p>
+                                <p class="text-sm font-semibold text-brandDarkText">Apoyando el crecimiento de pequeñas comunidades trabajadoras.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ACCESOS DIRECTOS / TARJETAS PRINCIPALES -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandBlue">Módulos de Atención Directa</h2>
+                <div class="w-12 h-1 bg-brandYellow mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Tarjeta 1: Mi Grupo -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 card-shadow transition-all relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brandBlue"></div>
+                    <div>
+                        <div class="w-12 h-12 bg-blue-50 text-brandBlue rounded-xl flex items-center justify-center mb-4 text-xl">
+                            <i class="fa-solid fa-people-roof text-brandBlue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Mi Grupo</h3>
+                        <p class="text-sm text-gray-600 mb-6">Información de reuniones, fechas de pago y canales de aviso para grupos activos.</p>
+                    </div>
+                    <a href="#mis-grupos" class="inline-flex items-center text-sm font-bold text-brandBlue hover:text-brandRed transition-colors">
+                        Ver información de grupos <i class="fa-solid fa-arrow-right ms-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 2: Nuevo Grupo -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 card-shadow transition-all relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brandRed"></div>
+                    <div>
+                        <div class="w-12 h-12 bg-red-50 text-brandRed rounded-xl flex items-center justify-center mb-4 text-xl">
+                            <i class="fa-solid fa-user-plus text-brandRed"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Nuevo Grupo</h3>
+                        <p class="text-sm text-gray-600 mb-6">¿Quieres iniciar con vecinas o vecinos? Conoce las pautas y organízate hoy.</p>
+                    </div>
+                    <a href="#nuevo-grupo" class="inline-flex items-center text-sm font-bold text-brandRed hover:underline transition-colors">
+                        Requisitos y organización <i class="fa-solid fa-arrow-right ms-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 3: Información -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 card-shadow transition-all relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brandYellow"></div>
+                    <div>
+                        <div class="w-12 h-12 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                            <i class="fa-solid fa-circle-info text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Información</h3>
+                        <p class="text-sm text-gray-600 mb-6">Capacitaciones, talleres disponibles y guías útiles para tu negocio.</p>
+                    </div>
+                    <a href="#informacion" class="inline-flex items-center text-sm font-bold text-brandBlue hover:text-brandRed transition-colors">
+                        Explorar contenidos <i class="fa-solid fa-arrow-right ms-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 4: Contacto -->
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 card-shadow transition-all relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-gray-400"></div>
+                    <div>
+                        <div class="w-12 h-12 bg-gray-100 text-gray-700 rounded-xl flex items-center justify-center mb-4 text-xl">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Contacto Directo</h3>
+                        <p class="text-sm text-gray-600 mb-6">Resuelve tus dudas puntuales de manera personalizada vía WhatsApp o teléfono.</p>
+                    </div>
+                    <a href="#contacto" class="inline-flex items-center text-sm font-bold text-brandBlue hover:text-brandRed transition-colors">
+                        Ver datos de atención <i class="fa-solid fa-arrow-right ms-2 text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MIS GRUPOS (Información para emprendedores integrados) -->
+    <section id="mis-grupos" class="py-12 bg-brandLightGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <span class="text-xs font-bold text-brandRed uppercase tracking-widest block mb-1">Acompañamiento Continuo</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-brandBlue">Grupos Solidarios en Mantención</h2>
+                </div>
+                <p class="text-sm text-gray-600 mt-2 md:mt-0 max-w-md">
+                    Si ya formas parte de un banco comunal o grupo solidario, aquí encontrarás los recordatorios generales y apoyo en gestión.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card Grupo 1 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-brandBlue text-xs font-bold px-3 py-1 rounded-full">Reuniones Mensuales</span>
+                        <i class="fa-regular fa-calendar-check text-brandYellow text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDarkText mb-2">Asistencia y Capacitación</h3>
+                    <p class="text-xs text-gray-600 mb-4">
+                        Recuerda que las capacitaciones en cada reunión fortalecen la administración de tu negocio personal y el aprendizaje grupal.
+                    </p>
+                    <a href="https://wa.me/56989566273?text=Hola,%20quisiera%20consultar%20sobre%20la%20próxima%20reunión%20de%20mi%20grupo" target="_blank" class="text-xs font-bold text-brandRed hover:underline flex items-center">
+                        <i class="fa-brands fa-whatsapp me-1"></i> Consultar calendario por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Card Grupo 2 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">Puntualidad</span>
+                        <i class="fa-solid fa-hand-holding-dollar text-brandYellow text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDarkText mb-2">Coordinación de Pagos</h3>
+                    <p class="text-xs text-gray-600 mb-4">
+                        El compromiso recíproco asegura la continuidad de todos. Revisa con tu directiva las fechas antes de cada ciclo.
+                    </p>
+                    <a href="https://wa.me/56989566273?text=Hola,%20tengo%20una%20duda%20sobre%20los%20pagos%20de%20mi%20grupo" target="_blank" class="text-xs font-bold text-brandRed hover:underline flex items-center">
+                        <i class="fa-brands fa-whatsapp me-1"></i> Resolver dudas con el Asesor
+                    </a>
+                </div>
+
+                <!-- Card Grupo 3 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full">Directivas</span>
+                        <i class="fa-solid fa-users-gear text-brandYellow text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDarkText mb-2">Apoyo a Presidentas y Tesoreras</h3>
+                    <p class="text-xs text-gray-600 mb-4">
+                        Canal directo para asesorar a las directivas en el llenado de planillas y organización interna de cada encuentro.
+                    </p>
+                    <a href="https://wa.me/56989566273?text=Hola,%20soy%20directiva%20de%20un%20grupo%20y%20necesito%20orientación" target="_blank" class="text-xs font-bold text-brandRed hover:underline flex items-center">
+                        <i class="fa-brands fa-whatsapp me-1"></i> Asistencia a directivas
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUEVO GRUPO -->
+    <section id="nuevo-grupo" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brandBlue to-blue-900 rounded-3xl text-white p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+                
+                <!-- Adorno Visual -->
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brandYellow rounded-full opacity-10 pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7">
+                        <span class="bg-brandYellow text-brandBlue font-extrabold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
+                            ¿Quieres emprender acompañado?
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold mb-4 leading-tight">
+                            ¿Cómo formar un Nuevo Grupo de Emprendedores?
+                        </h2>
+                        <p class="text-blue-100 text-sm sm:text-base mb-6 leading-relaxed">
+                            Si tienes vecinas, vecinos, amigos o familiares con ganas de salir adelante con un emprendimiento, pueden organizarse en un grupo solidario con nuestro respaldo.
+                        </p>
+
+                        <ul class="space-y-3 mb-8 text-sm sm:text-base">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brandYellow mt-1"></i>
+                                <span>Reunir a personas de confianza con ganas de emprender o hacer crecer su negocio.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brandYellow mt-1"></i>
+                                <span>Residir en zonas o sectores cercanos para reunirse periódicamente.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brandYellow mt-1"></i>
+                                <span>Contar con la motivación para capacitarse en comunidad.</span>
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/56989566273?text=Hola%20Francisco,%20tengo%20un%20grupo%20de%20personas%20interesadas%20en%20formar%20un%20nuevo%20grupo" 
+                           target="_blank"
+                           class="inline-flex items-center gap-3 bg-brandRed hover:bg-red-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-transform transform active:scale-95 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Orientación para Formar Grupo</span>
+                        </a>
+                    </div>
+
+                    <!-- Cuadro Informativo Integrado -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white text-brandDarkText p-6 rounded-2xl shadow-lg border-2 border-brandYellow">
+                            <h3 class="font-bold text-lg text-brandBlue mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-lightbulb text-brandYellow text-xl"></i> Paso a Paso Inicial
+                            </h3>
+                            <ol class="space-y-3 text-xs sm:text-sm text-gray-700">
+                                <li class="flex gap-2">
+                                    <span class="font-bold text-brandRed">1.</span>
+                                    <span>Conversa con tus conocidos y confirma el interés en apoyarse mutuamente.</span>
+                                </li>
+                                <li class="flex gap-2">
+                                    <span class="font-bold text-brandRed">2.</span>
+                                    <span>Escríbeme directamente por WhatsApp indicando tu sector o comuna.</span>
+                                </li>
+                                <li class="flex gap-2">
+                                    <span class="font-bold text-brandRed">3.</span>
+                                    <span>Coordinamos una primera charla informativa en tu comunidad.</span>
+                                </li>
+                            </ol>
+                            <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                                <span class="text-xs text-gray-500 font-medium">Te acompaño durante todo el proceso de conformación.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: INFORMACIÓN Y COMUNIDAD -->
+    <section id="informacion" class="py-12 bg-brandLightGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-brandBlue uppercase tracking-widest">Recursos para Crecer</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandBlue mt-1">Información y Herramientas</h2>
+                <p class="text-sm text-gray-600 mt-2">Fotografías y testimonios del trabajo directo con emprendedores en terreno.</p>
+            </div>
+
+            <!-- Galería de Trabajo en Comunidad -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Capacitación comunitaria" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-brandRed font-bold">Capacitación</span>
+                        <h4 class="font-bold text-sm text-brandBlue mt-1">Talleres de Presupuesto Familiar</h4>
+                        <p class="text-xs text-gray-600 mt-1">Aprende a separar las finanzas de tu hogar de las finanzas de tu negocio.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Emprendedora local" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-brandBlue font-bold">Historias de Esfuerzo</span>
+                        <h4 class="font-bold text-sm text-brandBlue mt-1">Impulsa tu Microempresa</h4>
+                        <p class="text-xs text-gray-600 mt-1">Historias de emprendedoras que han logrado hacer crecer sus proyectos locales.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+                    <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=600&q=80" alt="Reunión grupal" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-yellow-600 font-bold">Encuentros</span>
+                        <h4 class="font-bold text-sm text-brandBlue mt-1">Redes de Apoyo Mutuo</h4>
+                        <p class="text-xs text-gray-600 mt-1">Fortalece alianzas comerciales con otras personas de tu mismo sector.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuadro Informativo de Valores -->
+            <div class="bg-white rounded-2xl p-6 md:p-8 border-l-4 border-brandYellow shadow-sm">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-brandYellow shrink-0">
+                        <i class="fa-solid fa-heart text-2xl text-yellow-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-brandBlue">Confianza, Cercanía y Compromiso</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1">
+                            Mi labor como Asesor es entregarte una atención cercana, respetuosa y orientada al desarrollo continuo de tu emprendimiento. Las puertas de la comunicación siempre están abiertas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-brandRed uppercase tracking-widest">Resuelve tus dudas</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandBlue mt-1">Preguntas Frecuentes</h2>
+                <div class="w-12 h-1 bg-brandYellow mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-brandBlue bg-brandLightGray hover:bg-gray-100 flex justify-between items-center transition-colors">
+                        <span>¿Este es el sitio web oficial de Banigualdad?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-xs sm:text-sm text-brandDarkText bg-white border-t border-gray-100">
+                        No. Este es un portal informativo y de contacto directo administrado por mí como <strong>Asesor de Emprendimiento</strong>, para facilitar la comunicación y orientación con mis grupos atendidos. Para visitar la página oficial institucional de la fundación, puedes ingresar a <a href="https://www.banigualdad.cl" target="_blank" class="text-brandBlue font-bold underline">www.banigualdad.cl</a>.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-brandBlue bg-brandLightGray hover:bg-gray-100 flex justify-between items-center transition-colors">
+                        <span>¿Qué requisitos necesito para formar o integrar un grupo?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-xs sm:text-sm text-brandDarkText bg-white border-t border-gray-100">
+                        Principalmente tener un microemprendimiento en marcha o una idea clara para iniciar, contar con la disposición de reunirte con tus pares periódicamente y promover valores como la responsabilidad y la solidaridad grupal.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-brandBlue bg-brandLightGray hover:bg-gray-100 flex justify-between items-center transition-colors">
+                        <span>¿Cómo me contacto rápidamente ante una emergencia o duda?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-xs sm:text-sm text-brandDarkText bg-white border-t border-gray-100">
+                        El medio más ágil es el botón principal de <strong>WhatsApp</strong> disponible en este sitio. También respondo llamadas durante el horario de atención en terreno.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-brandBlue bg-brandLightGray hover:bg-gray-100 flex justify-between items-center transition-colors">
+                        <span>¿Qué tipo de capacitaciones se imparten?</span>
+                        <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-xs sm:text-sm text-brandDarkText bg-white border-t border-gray-100">
+                        En las reuniones periódicas abordamos temas como administración de capital, servicio al cliente, costos, ventas y desarrollo personal.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="py-12 bg-brandLightGray border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-gray-100">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    
+                    <div>
+                        <span class="text-xs font-bold text-brandRed uppercase tracking-wider block mb-1">Comunicación Directa</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-brandBlue mb-4">¿Tienes consultas adicionales?</h2>
+                        <p class="text-sm text-gray-600 mb-6">
+                            Estoy disponible para apoyarte en lo que necesites para tu emprendimiento o para la organización de tu grupo.
+                        </p>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-blue-50/50 border border-blue-100">
+                                <div class="w-10 h-10 bg-brandBlue text-white rounded-lg flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user text-brandYellow"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-500 block">Asesor de Terreno</span>
+                                    <span class="font-bold text-brandBlue">Francisco Villarreal</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-red-50/50 border border-red-100">
+                                <div class="w-10 h-10 bg-brandRed text-white rounded-lg flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-500 block">WhatsApp / Teléfono</span>
+                                    <span class="font-bold text-brandDarkText">+56 9 8956 6273</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-3 rounded-xl bg-yellow-50/50 border border-yellow-200">
+                                <div class="w-10 h-10 bg-yellow-500 text-white rounded-lg flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-500 block">Horario de Atención</span>
+                                    <span class="font-bold text-brandDarkText">Lunes a Viernes: 09:00 - 18:00 hrs.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro para Enviar Mensaje Rápido -->
+                    <div class="bg-brandLightGray p-6 rounded-2xl border border-gray-200">
+                        <h3 class="font-bold text-brandBlue text-lg mb-3">Enviar mensaje directo por WhatsApp</h3>
+                        <p class="text-xs text-gray-600 mb-4">Escribe un mensaje de prueba y presiona enviar para abrir WhatsApp automáticamente con tu consulta redactada.</p>
+                        
+                        <div class="space-y-3">
+                            <div>
+                                <label for="msg-nombre" class="block text-xs font-bold text-gray-700 mb-1">Tu Nombre</label>
+                                <input type="text" id="msg-nombre" placeholder="Ej: Maria González" class="w-full text-sm p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandBlue focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="msg-sector" class="block text-xs font-bold text-gray-700 mb-1">Comuna o Sector</label>
+                                <input type="text" id="msg-sector" placeholder="Ej: Santiago / Comuna" class="w-full text-sm p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandBlue focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="msg-texto" class="block text-xs font-bold text-gray-700 mb-1">Consulta</label>
+                                <textarea id="msg-texto" rows="3" placeholder="Escribe tu consulta aquí..." class="w-full text-sm p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandBlue focus:outline-none"></textarea>
+                            </div>
+                            <button id="send-custom-wa" class="w-full bg-brandRed hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow flex items-center justify-center gap-2 transition-colors">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Enviar mensaje a Francisco</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA / FOOTER -->
+    <footer class="bg-brandBlue text-white pt-10 pb-20 md:pb-10 border-t-4 border-brandYellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+                
+                <!-- Columna 1: Aclaración e Identidad -->
+                <div class="md:col-span-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="w-3 h-3 bg-brandYellow rounded-full"></span>
+                        <h3 class="font-bold text-lg text-white">Atención Asesor de Emprendimiento</h3>
+                    </div>
+                    <p class="text-xs text-blue-100 leading-relaxed mb-3">
+                        Sitio de contacto y atención de Asesor de Emprendimiento.
+                    </p>
+                    <p class="text-xs text-blue-200 leading-relaxed">
+                        Página orientada a facilitar la comunicación, el envío de información y el acompañamiento de grupos solidarios en su camino de desarrollo.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Enlace Oficial -->
+                <div class="md:col-span-6 flex flex-col md:items-end justify-center">
+                    <div class="bg-blue-900/60 p-4 rounded-xl border border-blue-700 max-w-md w-full">
+                        <span class="text-xs text-yellow-300 font-bold block mb-1">
+                            <i class="fa-solid fa-building-columns me-1"></i> Fundación Banigualdad
+                        </span>
+                        <p class="text-xs text-blue-100 mb-3">
+                            Si deseas conocer más sobre la fundación institucional, programas nacionales y memoria anual, accede a su portal web oficial.
+                        </p>
+                        <a href="https://www.banigualdad.cl" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-xs font-bold bg-white text-brandBlue px-4 py-2 rounded-lg hover:bg-brandYellow transition-colors">
+                            <span>Ir al sitio oficial de Banigualdad</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright y Deslinde final -->
+            <div class="pt-6 border-t border-blue-800 text-center text-xs text-blue-200">
+                <p>&copy; 2026 Asesoría de Emprendimiento en Terreno. Chile.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <a href="https://wa.me/56989566273?text=Hola%20Francisco,%20quisiera%20hacer%20una%20consulta" 
+           target="_blank" 
+           aria-label="Contactar por WhatsApp"
+           class="flex items-center gap-2 bg-brandRed hover:bg-red-700 text-white font-bold px-4 py-3 rounded-full shadow-2xl transition-all transform hover:scale-105 active:scale-95 border-2 border-white">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span class="text-sm font-bold pr-1">WhatsApp</span>
+        </a>
+    </div>
+
+    <script>
+        // Toggle Menú Móvil
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toggle Preguntas Frecuentes (FAQ)
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+
+                // Alternar visibilidad
+                content.classList.toggle('hidden');
+                
+                // Rotar icono
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Generador de Mensaje de WhatsApp personalizable
+        const btnSendWa = document.getElementById('send-custom-wa');
+        btnSendWa.addEventListener('click', () => {
+            const nombre = document.getElementById('msg-nombre').value.trim();
+            const sector = document.getElementById('msg-sector').value.trim();
+            const texto = document.getElementById('msg-texto').value.trim();
+
+            let mensaje = "Hola Francisco, ";
+            if (nombre) mensaje += `mi nombre es ${nombre}. `;
+            if (sector) mensaje += `Soy de ${sector}. `;
+            if (texto) {
+                mensaje += `Consulta: ${texto}`;
+            } else {
+                mensaje += "Quisiera más información sobre los grupos de emprendedores.";
+            }
+
+            const url = `https://wa.me/56989566273?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
